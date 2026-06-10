@@ -1,0 +1,193 @@
+import {
+  Activity,
+  BarChart,
+  BookMarked,
+  ClipboardList,
+  Database,
+  FileText,
+  Folder,
+  FolderPlus,
+  Globe,
+  Key,
+  Link,
+  Link2,
+  Mail,
+  Megaphone,
+  Plus,
+  Sparkles,
+  Target,
+  Trophy,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
+
+export interface NavItem {
+  id: string;
+  label: string;
+  href: string;
+  icon: LucideIcon;
+  section?: string;
+  title?: string;
+  badge?: string;
+}
+
+export const NAV_SECTIONS: string[] = [
+  "Projects",
+  "Research",
+  "Prospecting",
+  "Prospects",
+  "Outreach",
+  "Links",
+];
+
+export const NAV_ITEMS: NavItem[] = [
+  {
+    id: "command-center",
+    label: "SEO Command Center",
+    href: "/app/command-center",
+    icon: Sparkles,
+    title: "SEO Command Center",
+  },
+  {
+    id: "projects",
+    label: "All Projects",
+    href: "/app/link-pro",
+    icon: Folder,
+    section: "Projects",
+    title: "All Projects Hub",
+  },
+  {
+    id: "create-project-wizard",
+    label: "Add Project",
+    href: "/app/link-pro/projects/new",
+    icon: FolderPlus,
+    section: "Projects",
+    title: "Add Project Wizard",
+  },
+  {
+    id: "blueprint",
+    label: "Link Profiles",
+    href: "/app/link-pro/projects",
+    icon: Link,
+    section: "Research",
+    title: "Link Profiles Strategy",
+  },
+  {
+    id: "competitors",
+    label: "Competitors",
+    href: "/app/link-pro/competitors",
+    icon: Trophy,
+    section: "Research",
+    title: "Competitor Share-of-Voice",
+  },
+  {
+    id: "keyword-prospecting",
+    label: "Keyword Prospecting",
+    href: "/app/link-pro/keyword-prospecting",
+    icon: Key,
+    section: "Prospecting",
+    title: "Keyword Prospecting Finder",
+  },
+  {
+    id: "vetted-sites",
+    label: "Vetted Sites",
+    href: "/app/link-pro/site-finder",
+    icon: Globe,
+    section: "Prospecting",
+    title: "Vetted Editorial Sites Index",
+  },
+  {
+    id: "competitor-opportunities",
+    label: "Competitor Opportunities",
+    href: "/app/link-pro/competitor-opportunities",
+    icon: Target,
+    section: "Prospecting",
+    title: "Competitor Link Intersections",
+  },
+  {
+    id: "my-list",
+    label: "My List",
+    href: "/app/link-pro/my-list",
+    icon: Database,
+    section: "Prospecting",
+    title: "My Prospect Shortlists",
+  },
+  {
+    id: "prospect-list",
+    label: "Prospect List",
+    href: "/app/link-pro/outreach-pipeline",
+    icon: ClipboardList,
+    section: "Prospects",
+    title: "Prospect CRM Pipeline",
+  },
+  {
+    id: "clients",
+    label: "All Prospects",
+    href: "/app/link-pro/prospects",
+    icon: Users,
+    section: "Prospects",
+    title: "All Prospects Directory",
+  },
+  {
+    id: "campaigns",
+    label: "Campaigns",
+    href: "/app/link-pro/campaigns",
+    icon: Megaphone,
+    section: "Outreach",
+    title: "Outreach Campaigns Console",
+  },
+  {
+    id: "create-campaign",
+    label: "Create Campaign",
+    href: "/app/link-pro/campaigns/new",
+    icon: Plus,
+    section: "Outreach",
+    title: "Create Outreach Campaign",
+  },
+  {
+    id: "pitch-templates",
+    label: "Pitch Templates",
+    href: "/app/link-pro/pitch-templates",
+    icon: FileText,
+    section: "Outreach",
+    title: "Pitch Templates Composer",
+  },
+  {
+    id: "email-accounts",
+    label: "Email Accounts",
+    href: "/app/link-pro/email-accounts",
+    icon: Mail,
+    section: "Outreach",
+    title: "Outreach Senders Configuration",
+  },
+  {
+    id: "inventory",
+    label: "Acquired Links",
+    href: "/app/link-pro/inventory",
+    icon: Link2,
+    section: "Links",
+    title: "Acquired Links Ledger",
+  },
+  {
+    id: "monitoring",
+    label: "Link Monitoring",
+    href: "/app/link-monitor-pro",
+    icon: Activity,
+    section: "Links",
+    title: "Link Monitoring & Crawler",
+  },
+  {
+    id: "analytics",
+    label: "Analytics Dashboard",
+    href: "/app/analytics",
+    icon: BarChart,
+    title: "Analytics Dashboard",
+  },
+  {
+    id: "auditor",
+    label: "Blueprint Auditor",
+    href: "/app/audit",
+    icon: BookMarked,
+    title: "Blueprint Auditor",
+  },
+];
