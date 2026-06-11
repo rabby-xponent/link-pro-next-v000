@@ -72,7 +72,7 @@ export function MildCard() {
     },
     {
       name: "Compliant Baseline (Teal/Navy Grid)",
-      snippet: `// Perfectly styled Aetheric Intelligence Component!
+      snippet: `// Perfectly styled Uprankly Component!
 import React from 'react';
 export function CompliantCard() {
   return (
@@ -81,7 +81,7 @@ export function CompliantCard() {
         Category: Authority
       </div>
       <h3 className="font-semibold text-slate-800 text-base leading-tight mt-1 tracking-tight">
-        Aetheric Domain Performance
+        Uprankly Domain Performance
       </h3>
       <p className="text-slate-500 text-sm mt-2 leading-relaxed">
         Integrate backlink authority metrics using strict 8px base units layout grids.

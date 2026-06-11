@@ -16,7 +16,7 @@ export function SidebarNavItem({ item, isActive, isCollapsed }: SidebarNavItemPr
   return (
     <Link
       href={item.href}
-      className={`w-full flex items-center gap-2.5 py-1.5 px-3 rounded-md text-[11px] tracking-wide transition-all text-left font-medium cursor-pointer relative group ${
+      className={`w-full flex items-center gap-2.5 py-1.5 px-3 rounded-md text-[13px] tracking-wide transition-all text-left font-medium cursor-pointer relative group ${
         isActive
           ? "bg-[#edf4fc] text-[#0d9488] font-bold pl-3"
           : "text-slate-600 hover:bg-slate-50 hover:text-slate-950"

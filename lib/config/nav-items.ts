@@ -3,12 +3,14 @@ import {
   BarChart,
   BookMarked,
   ClipboardList,
+  CreditCard,
   Database,
   FileText,
   Folder,
   FolderPlus,
   Globe,
   Key,
+  LayoutGrid,
   Link,
   Link2,
   Mail,
@@ -17,6 +19,7 @@ import {
   Sparkles,
   Target,
   Trophy,
+  User,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -36,6 +39,7 @@ export const NAV_SECTIONS: string[] = [
   "Research",
   "Prospecting",
   "Prospects",
+  "Agency",
   "Outreach",
   "Links",
 ];
@@ -129,6 +133,14 @@ export const NAV_ITEMS: NavItem[] = [
     title: "All Prospects Directory",
   },
   {
+    id: "agency-clients",
+    label: "Client",
+    href: "/app/link-pro/agency-clients",
+    icon: Users,
+    section: "Agency",
+    title: "Agency Client Desk",
+  },
+  {
     id: "campaigns",
     label: "Campaigns",
     href: "/app/link-pro/campaigns",
@@ -189,5 +201,60 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/app/audit",
     icon: BookMarked,
     title: "Blueprint Auditor",
+  },
+];
+
+// "Uprankly Tools" hub mode — shown on /app/command-center, /app/account,
+// /app/billing, /app/usage, /app/team (see lib/helpers/is-link-pro-mode.ts)
+export const UPRANKLY_NAV_SECTIONS: string[] = ["", "SETTINGS"];
+
+export const UPRANKLY_NAV_ITEMS: NavItem[] = [
+  {
+    id: "uprankly-tools",
+    label: "Uprankly Tools",
+    href: "/app/command-center",
+    icon: LayoutGrid,
+    section: "",
+    title: "SEO Command Center",
+  },
+  {
+    id: "link-pro-hub",
+    label: "Link Pro",
+    href: "/app/link-pro",
+    icon: Link2,
+    section: "",
+    title: "All Projects Hub",
+  },
+  {
+    id: "account",
+    label: "Account",
+    href: "/app/account",
+    icon: User,
+    section: "SETTINGS",
+    title: "Account & Security Profile",
+  },
+  {
+    id: "billing",
+    label: "Billing",
+    href: "/app/billing",
+    icon: CreditCard,
+    section: "SETTINGS",
+    title: "Billing & Subscriptions",
+  },
+  {
+    id: "usage",
+    label: "Usage",
+    href: "/app/usage",
+    icon: Activity,
+    section: "SETTINGS",
+    title: "Resource Usage Audits",
+  },
+  {
+    id: "team",
+    label: "Team",
+    href: "/app/team",
+    icon: Users,
+    section: "SETTINGS",
+    title: "Team Collaboration Access",
   },
 ];

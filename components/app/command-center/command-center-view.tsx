@@ -133,7 +133,7 @@ export function CommandCenterView() {
                 <button onClick={handleResetCredits} className="text-[10px] text-red-600 hover:underline font-bold uppercase transition-colors">Reset Stats</button>
               </div>
               <p className="text-xs text-slate-600">
-                Aetheric Intelligence provides zero mock data layers. Test the react state engine directly below by deploying assets or performing outreach processes:
+                Uprankly provides zero mock data layers. Test the react state engine directly below by deploying assets or performing outreach processes:
               </p>
               <div className="flex flex-wrap gap-2 pt-1">
                 <button
@@ -218,7 +218,7 @@ export function CommandCenterView() {
             {/* Launch CTA Trigger bottom block */}
             <div className="px-6 md:px-8 pb-8">
               <button
-                onClick={() => router.push("/app/link-pro/projects")}
+                onClick={() => router.push("/app/link-pro")}
                 className="w-full bg-[#00685f] hover:bg-[#005049] text-white font-semibold py-4 rounded-lg flex items-center justify-center gap-2 group transition-all duration-300 cursor-pointer shadow-sm active:scale-99"
                 id="launch-linkpro-operational-btn"
               >

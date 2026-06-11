@@ -4,7 +4,7 @@ import {
   ChevronLeft,
   ChevronRight,
   HelpCircle,
-  Link2,
+  LayoutGrid,
   MessageSquare,
   Settings,
 } from "lucide-react";
@@ -12,7 +12,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import { NAV_ITEMS, NAV_SECTIONS } from "@/lib/config/nav-items";
+import { NAV_ITEMS, NAV_SECTIONS, UPRANKLY_NAV_ITEMS, UPRANKLY_NAV_SECTIONS } from "@/lib/config/nav-items";
+import { isLinkProMode } from "@/lib/helpers/is-link-pro-mode";
 
 import { SidebarNavSection } from "./sidebar-nav-section";
 
@@ -25,6 +26,10 @@ export function Sidebar() {
     setToastMsg(msg);
     setTimeout(() => setToastMsg(null), 3000);
   };
+
+  const linkProMode = isLinkProMode(pathname);
+  const sections = linkProMode ? NAV_SECTIONS : UPRANKLY_NAV_SECTIONS;
+  const items = linkProMode ? NAV_ITEMS : UPRANKLY_NAV_ITEMS;
 
   return (
     <div
@@ -48,18 +53,18 @@ export function Sidebar() {
           {!isCollapsed ? (
             <Link
               href="/app/command-center"
-              className="flex items-center gap-3 hover:opacity-85 transition-opacity text-left"
-              title="Return to SEO Command Center"
+              className="flex items-center gap-2.5 hover:opacity-85 transition-opacity text-left"
+              title="Return to Uprankly Tools Suite"
             >
-              <div className="w-8 h-8 bg-[#0d9488] rounded-lg flex items-center justify-center text-white shadow-sm shrink-0" id="sidebar-logo">
-                <Link2 className="w-4 h-4 rotate-45" />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white shrink-0 bg-[#0d9488]" id="sidebar-logo">
+                <LayoutGrid className="w-4 h-4" />
               </div>
               <div className="flex flex-col">
-                <span className="font-sans font-bold text-slate-800 tracking-tight text-sm leading-none mb-0.5">
-                  LINK PRO
+                <span className="font-sans font-black text-slate-800 tracking-tight text-base leading-none" style={{ color: "#006a61" }}>
+                  uprankly<span className="text-[#0d9488]">.</span>
                 </span>
-                <span className="text-[9px] text-[#6d7a77] uppercase font-mono font-bold tracking-widest">
-                  SEO Command Center
+                <span className="text-[8px] text-[#6d7a77] uppercase font-mono font-bold tracking-widest mt-0.5">
+                  {linkProMode ? "Link Pro App" : "Suite overview"}
                 </span>
               </div>
             </Link>
@@ -67,10 +72,10 @@ export function Sidebar() {
             <Link
               href="/app/command-center"
               className="w-8 h-8 bg-[#0d9488] rounded-lg flex items-center justify-center text-white mx-auto shadow-sm hover:opacity-85 transition-opacity"
-              title="Return to SEO Command Center"
+              title="Return to Uprankly Tools"
               id="sidebar-logo-collapsed"
             >
-              <Link2 className="w-4 h-4 rotate-45" />
+              <LayoutGrid className="w-4 h-4" />
             </Link>
           )}
 
@@ -89,12 +94,29 @@ export function Sidebar() {
           </button>
         </div>
 
+        {linkProMode && (
+          <div className="p-3 pb-0" id="back-to-uprankly-wrapper">
+            <Link
+              href="/app/command-center"
+              className="w-full flex items-center gap-2 py-2 px-3 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:border-slate-300 text-slate-700 hover:text-slate-900 rounded-md text-[10.5px] font-black tracking-wide transition-all text-left cursor-pointer uppercase font-sans"
+              id="global-uprankly-nav-btn"
+            >
+              <LayoutGrid className="w-3.5 h-3.5 text-[#0d9488] shrink-0" />
+              {!isCollapsed && (
+                <span className="flex items-center gap-1">
+                  <span>←</span> Uprankly Tools
+                </span>
+              )}
+            </Link>
+          </div>
+        )}
+
         <div className="p-3 space-y-4" id="sidebar-categories-scroller">
-          {NAV_SECTIONS.map((section, index) => (
+          {sections.map((section, index) => (
             <SidebarNavSection
-              key={section}
+              key={section || `section-${index}`}
               title={section}
-              items={NAV_ITEMS.filter((item) => item.section === section)}
+              items={items.filter((item) => item.section === section)}
               activeHref={pathname}
               isCollapsed={isCollapsed}
               showDivider={index > 0}

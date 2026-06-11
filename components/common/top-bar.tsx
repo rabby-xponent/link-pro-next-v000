@@ -54,11 +54,12 @@ export function TopBar() {
 
           <Link
             href="/app/command-center"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-slate-500 hover:text-slate-800 text-xs font-semibold hover:bg-slate-50 rounded-lg transition-colors"
-            title="Overview Suite Hub"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#edf4fc] text-[#0d9488] hover:bg-[#dce9f8] text-xs font-black rounded-lg transition-all cursor-pointer border border-[#bcc9c6]/30 uppercase"
+            title="Return to Uprankly Tools main suite"
+            id="topbar-nav-uprankly-tools-btn"
           >
-            <Sparkles className="w-4 h-4 text-[#006a61]" />
-            <span>HQ Hub</span>
+            <Sparkles className="w-3.5 h-3.5 text-[#0d9488]" />
+            <span>Uprankly Tools</span>
           </Link>
         </div>
 

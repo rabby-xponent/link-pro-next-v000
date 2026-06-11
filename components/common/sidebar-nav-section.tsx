@@ -27,7 +27,7 @@ export function SidebarNavSection({
         <div className="border-t border-slate-100/80 my-3 mx-1" id={`cat-divider-${dividerIndex}`} />
       )}
 
-      {!isCollapsed ? (
+      {!isCollapsed && title ? (
         <p className="px-3 font-bold text-[9.5px] text-[#6d7a77]/80 uppercase tracking-widest mb-1.5 mt-1 select-none font-sans">
           {title}
         </p>
